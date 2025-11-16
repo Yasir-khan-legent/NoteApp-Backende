@@ -1,0 +1,34 @@
+import express from 'express'
+import Signup from '../Cotrollers/signup.js';
+import Login from '../Cotrollers/login.js';
+import jwtmiddleware from '../Middleware/jwt.js';
+import Logout from '../Cotrollers/logout.js';
+import creatnote from '../Cotrollers/notcreat.js';
+import updatenote from '../Cotrollers/noteupdate.js';
+import {Deleteone,Deleteall} from '../Cotrollers/Delete.js';
+import FetchData from '../Cotrollers/Fetch.js';
+import Notes from '../Models/Note.js';
+
+
+const router = express.Router()
+
+
+router.get('/note/:id', async (req, res) => {
+  const note = await Notes.findById(req.params.id);
+  res.json(note);
+});
+
+
+router.put('/Update/:id' ,updatenote)
+router.delete('/Delete/:id' , jwtmiddleware,Deleteone)
+router.delete('/Delete',jwtmiddleware ,Deleteall)
+router.get('/Fetch' , jwtmiddleware,FetchData)
+router.post('/Signup' , Signup)
+router.post('/Create' ,jwtmiddleware, creatnote)
+router.post('/Login' , Login)
+router.get('/logout' , Logout)
+
+
+
+
+export default router;
