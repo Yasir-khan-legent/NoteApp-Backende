@@ -26,7 +26,7 @@ router.get('/Fetch' ,jwtmiddleware,FetchData)
 router.post('/Signup' , Signup)
 router.post('/Create' ,jwtmiddleware, creatnote)
 router.post('/Login' , Login)
-router.get('/logout' , Logout)
+router.get('/logout' ,jwtmiddleware, Logout)
 
 
 

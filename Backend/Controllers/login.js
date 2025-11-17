@@ -5,19 +5,16 @@ import jwt from 'jsonwebtoken'
 
 async function Login(req, res) {
   const { email, password } = req.body
-  // const user = await User.findOne({ email })
+  const user = await User.findOne({ email })
 
-  // if (!user) {
-  //   return res.json('Invalid Email and Password')
-  // }
-  // const match = await bcrypt.compare(password, user.password)
-  // if (!match) {
-  //   return res.json('Invalid Email Or Password')
-  // }
-  const user = {
-    _id: '123456',
-    email: 'afridi@gmail.com',
+  if (!user) {
+    return res.json('Invalid Email and Password')
   }
+  const match = await bcrypt.compare(password, user.password)
+  if (!match) {
+    return res.json('Invalid Email Or Password')
+  }
+
 
   const payload = {
     id: user._id,

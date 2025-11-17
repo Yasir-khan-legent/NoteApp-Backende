@@ -4,7 +4,7 @@ import Connection from './Config/config.js'
 import router from './Routes/router.js'
 import cookieParser from "cookie-parser";
 import cors from 'cors'
-import auth from './Routes/Auth.route.js';
+// import auth from './Routes/Auth.route.js';
 const app = express()
 app.use(express.json())
 Connection()
