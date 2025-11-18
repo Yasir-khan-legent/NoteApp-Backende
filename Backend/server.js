@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 Connection()
 app.use(cors({
-    origin: "https://note-app-backende-sm6s.vercel.app/",
+    origin: "https://note-app-backende-sm6s.vercel.app",
     credentials: true
 }))
 app.use(cookieParser())
