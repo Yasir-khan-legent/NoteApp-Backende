@@ -13,7 +13,7 @@ function Signup() {
 
     const signupdata = { name, email, password };
 
-    const res = await fetch("http://localhost:5000/api/auth/Signup", {
+    const res = await fetch("https://note-app-backende.vercel.app/api/auth/Signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(signupdata),
