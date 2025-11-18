@@ -173,7 +173,7 @@ height: 10vh;
 .float-btn {
   position: fixed;
   right: 20px;    /* right side se distance */
-  bottom: 20px;   /* bottom se distance */
+  bottom: 50px;   /* bottom se distance */
   padding: 10px 22px;
   background: var(--primary);
   color: white;
