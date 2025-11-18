@@ -521,7 +521,9 @@ textarea {
 
 
 
-
+.serchdiv{
+  display: block;
+}
 
 
 
@@ -728,6 +730,9 @@ textarea {
   height: 35px;
   font-size: 14px;
   border-radius: 3px;
+}
+.serchdiv{
+  display: block;
 }
 }
 
