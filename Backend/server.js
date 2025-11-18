@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 Connection()
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://note-app-backende-sm6s.vercel.app/",
     credentials: true
 }))
 app.use(cookieParser())
