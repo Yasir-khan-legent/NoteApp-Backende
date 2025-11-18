@@ -260,33 +260,47 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   height: auto;
   padding: 20px 10px;
 }
-.cards{
-width: 25%;
-height: 27vh;
-margin-top: 10px;
-border-radius: 10px;
-background-color: var(--highlight);
+.cards {
+  width: 25%;
+  height: 29vh;     /* fixed height (tumhari requirement) */
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: var(--highlight);
   box-shadow: 0px 4px 10px rgba(var(--shadow-color-rgb), var(--shadow-opacity));
   padding: 10px 15px;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-    display: flex;
-    overflow: hidden;
+  justify-content: space-between;
+  overflow: hidden;
+}
 
-}
-.cards h1{
-font-size: 29px;
-  padding-top: 10px;
+.cards h1 {
+  font-size: 22px;
   color: var(--text);
-   overflow-wrap: break-word;
-  word-break: break-word;
-}
-.cards p{
-  font-size: 12px;
   overflow-wrap: break-word;
   word-break: break-word;
-  color: var(--text);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  /* overflow: hidden; */
 }
+
+
+.cards p {
+  font-size: 12px;
+  color: var(--text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+
 .cardbtn{
    margin-top: auto;
   display: flex;
@@ -343,14 +357,20 @@ font-size: 29px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
 .modal-box {
   background: var(--card);
-  width: 400px;
+  width: 700px;
+  height: auto;
+  max-height: 90vh;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  overflow: auto;
+  line-break: auto;
+  z-index: 1000;
 }
 
 .close-btn {
@@ -366,7 +386,19 @@ font-size: 29px;
   margin-top: 15px;
 }
 
-
+.notfond{
+  color: var(--text);
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.para{
+  font-size: 16px;
+  font-weight: 500;
+color: var(--color);
+}
 
 
 
@@ -482,4 +514,225 @@ textarea {
   cursor: pointer;
   font-weight: 500;
 }
+.navmobile{
+  display: none;
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------- MOBILE RESPONSIVE ---------------- */
+@media (max-width: 480px) {
+
+  .navmobile{
+  display: block;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  /* NAVBAR */
+  .navbar {
+    /* flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 15px 0; */
+    display: none;
+  }
+
+  .logo {
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btns button {
+    width: 90%;
+    padding: 8px 0;
+    font-size: 15px;
+  }
+
+  .search {
+    width: 90%;
+    height: 40px;
+  }
+
+  /* HERO SECTION */
+  .main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hleft,
+  .hright {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .hleft {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 32px;
+  }
+
+  .texts {
+    font-size: 15px;
+  }
+
+  /* IMAGE */
+  .imgmain {
+    height: 250px;
+    padding-left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  /* NOTES HEADING */
+  .header2 h2 {
+    font-size: 20px;
+  }
+
+  /* CARDS MAIN */
+  .cardmain {
+    gap: 20px;
+  }
+
+  /* SINGLE CARD */
+  .cards {
+    width: 90%;
+    height: auto;
+    padding: 10px 10px;
+  }
+
+  .cards h1 {
+    font-size: 20px;
+    -webkit-line-clamp: 2;
+  }
+
+  .cards div {
+    font-size: 13px;
+    
+  }
+  .status{
+    margin-top: 8px;
+  }
+  .cstatus{
+    margin-top: 8px;
+  }
+
+  .buttons i {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
+  /* FLOAT BUTTON */
+  .float-btn {
+    right: 15px;
+    bottom: 15px;
+    padding: 8px 18px;
+    font-size: 24px;
+  }
+
+  /* MODAL */
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-content input,
+  .modal-content textarea {
+    width: 100%;
+  }
+
+  .status-options {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-buttons button {
+    width: 100%;
+  }
+
+  /* DETAIL MODAL */
+  .modal-box {
+    width: 90%;
+  }
+  .hname{
+    font-size: 25px;
+  }
+  .mbtns{
+    font-size: 23px;
+    cursor: pointer;
+  }
+  .dropdown {
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  width: 170px;
+  background-color: var(--bg);
+  border-radius: 5px;
+  padding: 10px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.dropdown p {
+  padding: 5px 15px;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 13px;
+}
+
+.dropdown p:hover {
+  background-color: var(--highlight);
+}
+  .serchdiv{
+    padding: 5px 5px;
+    margin-top: 10px;
+    
+  }
+.search{
+  width: 100%;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 3px;
+}
+}
+
+
+
+
+
 
